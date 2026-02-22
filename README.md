@@ -1201,7 +1201,15 @@ nano ~/.bashrc
 Add this at the very bottom (adjust key filename if different):
 
 ```bash
-eval $(keychain --eval --agents ssh id_ed25519)
+# Share one ssh-agent across shells (keychain manages SSH_AUTH_SOCK/SSH_AGENT_PID)
+# Only do this for interactive shells
+case "$-" in
+  *i*)
+    if command -v keychain >/dev/null 2>&1; then
+      eval "$(keychain --eval --quiet --agents ssh id_ed25519)"
+    fi
+    ;;
+esac
 ```
 
 ### Step 3 — Reload + unlock once

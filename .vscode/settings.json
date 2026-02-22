@@ -1,0 +1,24 @@
+{
+  "cSpell.words": [
+    "autopep",
+    "charliermarsh",
+    "esac",
+    "footguns",
+    "isort",
+    "mypkg",
+    "noqa",
+    "pathlib",
+    "Pipenv",
+    "pycache",
+    "pycodestyle",
+    "Pyflakes",
+    "pyproject",
+    "pytest",
+    "pyupgrade",
+    "sqlalchemy",
+    "trapipy",
+    "Typer",
+    "USERPROFILE",
+    "venv"
+  ]
+}
