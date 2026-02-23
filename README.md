@@ -697,6 +697,36 @@ This avoids errors in sessions where the venv/tool isn’t available.
 
 ---
 
+#### Optional: support `python -m` execution (`__main__.py`)
+
+If you want your packaged CLI to also run via Python’s module runner (`python -m ...`),
+add a `__main__.py` next to `__init__.py` and `main.py`.
+
+##### `src/trapipy_log/__main__.py`:
+
+```py
+from .main import app
+
+app()
+```
+
+##### Usage
+
+After installing/syncing the package, this works:
+
+```bash
+python -m trapipy_log --help
+```
+
+> Note: you must pass the **import name** (`trapipy_log`), not the distribution/command name (`trapipy-log`).
+
+##### Autocompletion caveat
+
+Shell completion is tied to the **console script name**, so TAB completion won’t work when invoking via
+`python -m ...`. Use the installed command (e.g., `trapipy-log ...`) for completion.
+
+---
+
 # Ruff + Pyright in a `uv` project (VS Code workflow)
 
 This walks you through setting up **VS Code**, installing **Ruff** and **Pyright** with **uv**, and wiring everything together so developers get fast linting, formatting, and strict type checking directly in the editor and in CI.
