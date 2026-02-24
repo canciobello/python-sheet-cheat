@@ -59,6 +59,7 @@ What these settings do:
 | -------------------------------------------------------------- | ------------------------------------------------------------------ |
 | List interpreters uv can use (installed + download candidates) | `uv python list`                                                   |
 | Only installed interpreters                                    | `uv python list --only-installed`                                  |
+| Only available downloads (download candidates) | `uv python list --only-downloads` |
 | Only **system** interpreters (unmanaged)                       | `uv python list --no-managed-python --only-installed`              |
 | Only **uv-managed** interpreters                               | `uv python list --managed-python --only-installed`                 |
 | Show more versions/platforms                                   | `uv python list --all-versions` / `uv python list --all-platforms` |
